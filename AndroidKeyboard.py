@@ -1,5 +1,5 @@
 ##AndroidKeyboard
-import getch, os
+import getch, os, sys
 char = ""
 string = ""
 letters = { 'q':['w','s','a'],'a':['q', 'w', 's', 'x', 'z'], 'z':['a','s','x',], 'w':['q','a','s','d','e'], 's':['d','e','w','a','z','x'], 'x':['c','d','s','z'], 'e':['r','d','s','w'], 'd':['f','r','e','s','x','c'], 'c':['v','f','d','x'], 'r':['t','f','d','e'], 'f':['g','t','r','d','c','v'], 'v':['b','g','f','c'], 't':['y','g','f','r'], 'g':['h','y','t','f','v','b'], 'b':['n','h','g','v'], 'y':['u','h','g','t'], 'h':['j','u','y','g','b','n'], 'n':['m','j','h','b'], 'u':['i','j','h','y'], 'j':['k','i','u','h','n','m'], 'm':['l','k','j','n'], 'i':['o','l','k','j','u'], 'k':['l','o','i','j','m'], 'o':['p','l','k','i'], 'l':['p','o','k'], 'p':['o','l']}
@@ -9,9 +9,12 @@ newresult = []
 count = 0
 word = ""
 
+if(sys.argv[1] == 'en'):
+	toopen = 'en.txt'
+if(sys.argv[1] == 'it'):
+	toopen = 'it.txt'
 
-
-f = open('dict.txt', 'r')
+f = open(toopen, 'r')
 x = f.readlines()
 for i in x:
         dict.append(i[0:len(i) -1])
