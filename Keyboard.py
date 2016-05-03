@@ -9,9 +9,9 @@ newresult = []
 count = 0
 word = ""
 
-if(sys.argv[1] == 'en'):
+if(sys.argv[1] == 'en.txt'):
 	toopen = 'en.txt'
-if(sys.argv[1] == 'it'):
+if(sys.argv[1] == 'it.txt'):
 	toopen = 'it.txt'
 
 f = open(toopen, 'r')
@@ -50,7 +50,7 @@ while ((char != '\n')):
 		count += 1
 		try:
 			if(i[k] == char):
-				newresult.append(i)	
+				newresult.append(i)
 		except:
 			pass
 	result = newresult
